@@ -1,0 +1,33 @@
+.wrapper{
+  display:grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap:0em;
+}
+.wrapper > div{
+  background:#eee;
+  padding:0em;
+  border:rgb(211, 39, 39) 1px solid;
+  background:#ddd;
+  justify-items:start;
+}
+.nested{
+  display:grid;
+  border:rgb(173, 187, 46) 1px solid;
+  padding:0em;
+  grid-gap:0em;
+  align-items:stretch;
+}
+.nested > div{
+  border:rgb(173, 187, 46) 1px solid;
+  padding:0em;
+}
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+body{
+  background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+  background: linear-gradient(to right, #25c481, #25b7c4);
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+
+
