@@ -32,10 +32,6 @@ const line_series_01 = tvchart_01.addLineSeries({ color: 'blue', lineWidth: 1 })
 const line_series_02 = tvchart_02.addLineSeries({ color: 'red', lineWidth: 1 });
 const line_series_03 = tvchart_03.addLineSeries({ color: 'green', lineWidth: 1 });
 
-tvchart_01.timeScale().fitContent();
-tvchart_02.timeScale().fitContent();
-tvchart_03.timeScale().fitContent();
-
 ws.onmessage=(event)=> {
 
 //    var currentTime = new Date()
@@ -43,9 +39,9 @@ ws.onmessage=(event)=> {
 //    var tm = parseInt(millisecs/1000)
 
     let jdata = JSON.parse(event.data)
-    var tm = jdata.E / 1000 // event time
-    var c = jdata.c // close price
-    var v = jdata.v // Total traded base asset volume
+    var tm = parseInt(jdata.E / 1000) // event time
+    var c = parseFloat(jdata.c) // close price
+    var v = parseFloat(jdata.v) // Total traded base asset volume
     var vi = v - temp_val
 
     if(first_pass == false){
